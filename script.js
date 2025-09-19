@@ -1,22 +1,20 @@
-// Koordinaten der Pupillen
+// Augenposition (wie gehabt)
 const eyesPercent = [
-  { x: 0.414, y: 0.511 }, // linkes Auge
-  { x: 0.59, y: 0.511 }  // rechtes Auge
+  { x: 0.40, y: 0.49 }, // linkes Auge
+  { x: 0.579, y: 0.49}  // rechtes Auge
 ];
 
 function positionEyes() {
   const freddyImg = document.getElementById('freddy-image');
   const bg = document.querySelector('.freddy-bg');
-  // Alte Augen entfernen
   document.querySelectorAll('.eye').forEach(e => e.remove());
   const rect = freddyImg.getBoundingClientRect();
   eyesPercent.forEach((eye, i) => {
     const eyeDiv = document.createElement('div');
     eyeDiv.className = 'eye';
     eyeDiv.style.position = 'absolute';
-    // Position relativ zum Bild!
-    eyeDiv.style.left = (rect.left + eye.x * rect.width - 23) + 'px';
-    eyeDiv.style.top  = (rect.top  + eye.y * rect.height - 23) + 'px';
+    eyeDiv.style.left = (rect.left + eye.x * rect.width - 10) + 'px'; // 10 = Hälfte der neuen eye-Größe
+    eyeDiv.style.top  = (rect.top  + eye.y * rect.height - 10) + 'px';
     bg.appendChild(eyeDiv);
   });
   startEyeAnimation();
@@ -45,4 +43,14 @@ window.addEventListener('DOMContentLoaded', () => {
     img.addEventListener('load', positionEyes);
   }
   window.addEventListener('resize', positionEyes);
+
+  // Toggle für ausklappbare Texte
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const fullText = document.getElementById(targetId);
+      const isVisible = fullText.classList.toggle('open');
+      btn.textContent = isVisible ? 'Weniger anzeigen' : 'Mehr anzeigen';
+    });
+  });
 });
