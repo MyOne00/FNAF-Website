@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const targetId = btn.getAttribute('data-target');
       const fullText = document.getElementById(targetId);
       const isVisible = fullText.classList.toggle('open');
-      btn.textContent = isVisible ? 'Zu' : 'Auf';
+      btn.textContent = isVisible ? 'Weniger' : 'Mehr';
     });
   });
 });
