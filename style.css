@@ -40,7 +40,6 @@ body {
   z-index: -1;
 }
 
-/* Die Augen werden per JS absolut positioniert */
 .eye {
   width: 20px;
   height: 20px;
@@ -111,25 +110,41 @@ main {
 .section-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 16px;
     margin-bottom: 8px;
 }
 
-.toggle-btn {
-    background: #ff4444;
-    color: #fff;
-    border: none;
-    font-family: inherit;
-    font-size: 13px;
-    padding: 6px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
+.section-header h2 {
+    margin: 0 auto;
+    flex: 1;
+    text-align: center;
 }
-.toggle-btn:hover {
-    background: #ffcc00;
-    color: #333;
+
+/* Neue Button-Styles */
+.toggle-btn {
+    font-family: "Press Start 2P", cursive;
+    font-size: 13px;
+    padding: 7px 22px;
+    margin-left: -100px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff4444 0%, #a30000 100%);
+    color: #ffcc00;
+    box-shadow: 0 0 12px 2px #a3000066, 0 0 4px 1px #ffcc0088;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+    position: relative;
+}
+
+.toggle-btn:hover, .toggle-btn:focus {
+    background: linear-gradient(90deg, #ffcc00 0%, #ff4444 100%);
+    color: #222;
+    box-shadow: 0 0 20px 6px #ffcc0099, 0 0 8px 2px #ff444488;
+    transform: scale(1.08);
 }
 
 .summary {

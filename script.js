@@ -1,4 +1,3 @@
-// Augenposition (wie gehabt)
 const eyesPercent = [
   { x: 0.40, y: 0.49 }, // linkes Auge
   { x: 0.579, y: 0.49}  // rechtes Auge
@@ -13,7 +12,7 @@ function positionEyes() {
     const eyeDiv = document.createElement('div');
     eyeDiv.className = 'eye';
     eyeDiv.style.position = 'absolute';
-    eyeDiv.style.left = (rect.left + eye.x * rect.width - 10) + 'px'; // 10 = Hälfte der neuen eye-Größe
+    eyeDiv.style.left = (rect.left + eye.x * rect.width - 10) + 'px';
     eyeDiv.style.top  = (rect.top  + eye.y * rect.height - 10) + 'px';
     bg.appendChild(eyeDiv);
   });
@@ -44,13 +43,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('resize', positionEyes);
 
-  // Toggle für ausklappbare Texte
+  // Toggle für ausklappbare Texte - Buttons mit Klasse .toggle-btn
   document.querySelectorAll('.toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
       const fullText = document.getElementById(targetId);
       const isVisible = fullText.classList.toggle('open');
-      btn.textContent = isVisible ? 'Weniger anzeigen' : 'Mehr anzeigen';
+      btn.textContent = isVisible ? 'Zu' : 'Auf';
     });
   });
 });
