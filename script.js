@@ -1,7 +1,7 @@
-// Koordinaten der Pupillen in Prozent (ermittelt am Bild, z.B. links ca. 36%, rechts ca. 63%)
+// Koordinaten der Pupillen
 const eyesPercent = [
-  { x: 0.39, y: 0.49 }, // linkes Auge
-  { x: 0.58, y: 0.49 }  // rechtes Auge
+  { x: 0.414, y: 0.511 }, // linkes Auge
+  { x: 0.59, y: 0.511 }  // rechtes Auge
 ];
 
 function positionEyes() {
@@ -15,7 +15,7 @@ function positionEyes() {
     eyeDiv.className = 'eye';
     eyeDiv.style.position = 'absolute';
     // Position relativ zum Bild!
-    eyeDiv.style.left = (rect.left + eye.x * rect.width - 23) + 'px'; // 23 = Hälfte der eye-Größe
+    eyeDiv.style.left = (rect.left + eye.x * rect.width - 23) + 'px';
     eyeDiv.style.top  = (rect.top  + eye.y * rect.height - 23) + 'px';
     bg.appendChild(eyeDiv);
   });

@@ -42,46 +42,27 @@ body {
 
 /* Die Augen werden per JS absolut positioniert */
 .eye {
-  width: 46px;
-  height: 46px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: radial-gradient(circle at 55% 60%, #fff 14%, #ff2a2a 45%, #8b0000 80%, transparent 100%);
-  opacity: 0;
-  box-shadow: 0 0 0px 0px #ff2a2a;
-  transition: opacity 0.25s, box-shadow 0.25s;
+  position: absolute;
   pointer-events: none;
   z-index: 3;
-  position: absolute;
+  /* Realistischer Glow: kleiner, radial, mehr weiß im Zentrum */
+  background: radial-gradient(circle at 55% 60%, #fff 35%, #ff2a2a 65%, #8b0000 90%, transparent 100%);
+  opacity: 0;
+  box-shadow: 0 0 0px 0px #ff2a2a;
+  transition: opacity 0.2s, box-shadow 0.2s;
 }
 
-/* Realistisches Leuchten + pulsierende Animation */
+/* Glow subtil, nur leichtes Leuchten */
 .eye.active {
   opacity: 1;
   animation: eye-glow 1.2s cubic-bezier(0.7,0.2,0.2,1) alternate;
   box-shadow:
-    0 0 70px 30px #ff2a2a,
-    0 0 110px 50px #c00,
-    0 0 16px 4px #fff,
-    0 0 180px 90px #ff2a2a77;
-}
-
-@keyframes eye-glow {
-  0% {
-    box-shadow: 0 0 12px 2px #ff2a2a, 0 0 0px 0px #fff;
-    opacity: 1;
-  }
-  40% {
-    box-shadow: 0 0 80px 36px #ff2a2a, 0 0 16px 6px #fff;
-    opacity: 1;
-  }
-  60% {
-    box-shadow: 0 0 120px 60px #c00, 0 0 32px 10px #fff;
-    opacity: 1;
-  }
-  100% {
-    box-shadow: 0 0 70px 30px #ff2a2a, 0 0 180px 90px #ff2a2a77;
-    opacity: 1;
-  }
+    0 0 12px 6px #ff2a2a,
+    0 0 18px 9px #c00,
+    0 0 2px 1px #fff;
 }
 
 header {
@@ -173,4 +154,23 @@ footer {
     opacity: 0.88;
     border-top: 2px solid #ffcc00;
     margin-top: 32px;
+}
+
+@keyframes eye-glow {
+  0% {
+    box-shadow: 0 0 4px 2px #ff2a2a, 0 0 0px 0px #fff;
+    opacity: 0.7;
+  }
+  40% {
+    box-shadow: 0 0 14px 7px #ff2a2a, 0 0 4px 2px #fff;
+    opacity: 0.7;
+  }
+  60% {
+    box-shadow: 0 0 18px 9px #c00, 0 0 7px 3px #fff;
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 12px 6px #ff2a2a, 0 0 18px 9px #c00;
+    opacity: 0.7;
+  }
 }
