@@ -1,3 +1,6 @@
+/* ===============================
+   Font & Grundlayout
+   =============================== */
 @font-face {
     font-family: "Press Start 2P";
     src: url(/fonts/PressStart2P-Regular.ttf) format("truetype");
@@ -14,67 +17,78 @@ body {
     overflow-x: hidden;
 }
 
+/* ===============================
+   Freddy Hintergrund
+   =============================== */
 .freddy-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -2;
-  overflow: hidden;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+    overflow: hidden;
 }
-
 .freddy-bg img {
-  position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: auto;
-  max-width: 80vw;
-  max-height: 80vh;
-  opacity: 0.28;
-  filter: brightness(0.8) drop-shadow(0 0 80px #000) blur(0.5px);
-  pointer-events: none;
-  z-index: -1;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    opacity: 0.28;
+    filter: brightness(0.8) drop-shadow(0 0 80px #000) blur(0.5px);
+    pointer-events: none;
+    z-index: -1;
 }
 
+/* ===============================
+   Augen-Effekt (per JS)
+   =============================== */
 .eye {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  z-index: 3;
-  background: radial-gradient(circle at 50% 50%, #fff 45%, #ff2a2a 80%, #8b0000 100%);
-  opacity: 0;
-  box-shadow: 0 0 0px 0px #ff2a2a;
-  transition: opacity 0.2s, box-shadow 0.2s;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 3;
+    background: radial-gradient(circle at 50% 50%, #fff 45%, #ff2a2a 80%, #8b0000 100%);
+    opacity: 0;
+    box-shadow: 0 0 0px 0px #ff2a2a;
+    transition: opacity 0.2s, box-shadow 0.2s;
 }
-
 .eye.active {
-  opacity: 1;
-  animation: eye-glow 1.2s cubic-bezier(0.7,0.2,0.2,1) alternate;
-  box-shadow:
-    0 0 8px 2px #ff2a2a,
-    0 0 12px 4px #c00,
-    0 0 2px 1px #fff;
+    opacity: 1;
+    animation: eye-glow 1.2s cubic-bezier(0.7,0.2,0.2,1) alternate;
+    box-shadow:
+        0 0 8px 2px #ff2a2a,
+        0 0 12px 4px #c00,
+        0 0 2px 1px #fff;
+}
+@keyframes eye-glow {
+    0%   { box-shadow: 0 0 2px 1px #ff2a2a, 0 0 0px 0px #fff; opacity: 0.7; }
+    40%  { box-shadow: 0 0 10px 3px #ff2a2a, 0 0 2px 1px #fff; opacity: 0.7; }
+    60%  { box-shadow: 0 0 14px 5px #c00, 0 0 4px 2px #fff;   opacity: 0.7; }
+    100% { box-shadow: 0 0 8px 2px #ff2a2a, 0 0 12px 4px #c00; opacity: 0.7; }
 }
 
+/* ===============================
+   Header & Navigation
+   =============================== */
 header {
     text-align: center;
     margin-top: 26px;
     margin-bottom: 24px;
 }
-
 header h1 {
     font-size: 26px;
     color: #ffcc00;
     text-shadow: 2px 2px 6px #000;
     margin-bottom: 10px;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -83,30 +97,29 @@ nav ul {
     justify-content: center;
     gap: 28px;
 }
-
 nav ul li {
     display: inline;
 }
-
 nav ul li a {
     color: #ffcc00;
     text-decoration: none;
     font-size: 15px;
     transition: color 0.2s;
 }
-
 nav ul li a:hover {
     color: #fff;
     text-shadow: 0 0 8px #ffcc00;
 }
 
+/* ===============================
+   Hauptbereich (Card-Container)
+   =============================== */
 main {
     padding: 20px;
     max-width: 820px;
     margin: auto;
     text-align: center;
 }
-
 .about, .home, .games, .contact {
     position: relative;
     background-color: #232323;
@@ -116,16 +129,18 @@ main {
     margin: 28px 0;
 }
 
+/* ===============================
+   Bereichsüberschrift + Button
+   =============================== */
 .section-header {
     position: relative;
     width: 100%;
     min-height: 48px;
-    margin-bottom: 16px; /* Abstand nach unten zur summary */
+    margin-bottom: 16px;  /* Abstand nach unten zur summary */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .section-header h2 {
     width: 100%;
     margin: 0;
@@ -135,7 +150,6 @@ main {
     letter-spacing: 0.04em;
     font-weight: bold;
 }
-
 .section-header .toggle-btn {
     position: absolute;
     right: 16px; /* Abstand von rechter Border */
@@ -143,10 +157,11 @@ main {
     transform: translateY(-50%);
     margin: 0;
     z-index: 1;
-    /* Button-Style siehe unten */
 }
 
-/* Button-Styles */
+/* ===============================
+   Mehr-Anzeigen Button
+   =============================== */
 .toggle-btn {
     font-family: "Press Start 2P", cursive;
     font-size: 13px;
@@ -162,7 +177,6 @@ main {
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
     outline: none;
 }
-
 .toggle-btn:hover, .toggle-btn:focus {
     background: linear-gradient(90deg, #ffcc00 0%, #ff4444 100%);
     color: #222;
@@ -170,14 +184,16 @@ main {
     transform: scale(1.08);
 }
 
+/* ===============================
+   Zusammenfassung & Ausklapptext
+   =============================== */
 .summary {
     font-size: 15px;
     color: #ffcc00;
     text-align: center;
-    margin: 0 0 16px 0; /* Mehr Abstand zur Überschrift und zum Text */
+    margin: 0 0 16px 0; /* Abstand zur Überschrift und zum Text */
     font-weight: bold;
 }
-
 .full-text {
     display: none;
     font-size: 14px;
@@ -192,6 +208,9 @@ main {
     display: block;
 }
 
+/* ===============================
+   Listen & Paragraphs
+   =============================== */
 section ul {
     text-align: left;
     margin: 0 auto 10px auto;
@@ -199,7 +218,6 @@ section ul {
     padding-left: 22px;
     color: #ffcc00;
 }
-
 section p {
     line-height: 1.6;
     font-size: 15px;
@@ -208,6 +226,9 @@ section p {
     color: #eee;
 }
 
+/* ===============================
+   Footer
+   =============================== */
 footer {
     text-align: center;
     padding: 13px;
@@ -218,23 +239,4 @@ footer {
     opacity: 0.88;
     border-top: 2px solid #ffcc00;
     margin-top: 32px;
-}
-
-@keyframes eye-glow {
-  0% {
-    box-shadow: 0 0 2px 1px #ff2a2a, 0 0 0px 0px #fff;
-    opacity: 0.7;
-  }
-  40% {
-    box-shadow: 0 0 10px 3px #ff2a2a, 0 0 2px 1px #fff;
-    opacity: 0.7;
-  }
-  60% {
-    box-shadow: 0 0 14px 5px #c00, 0 0 4px 2px #fff;
-    opacity: 0.7;
-  }
-  100% {
-    box-shadow: 0 0 8px 2px #ff2a2a, 0 0 12px 4px #c00;
-    opacity: 0.7;
-  }
 }

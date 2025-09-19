@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icons/favicon.ico" type="favicon">
+    <link rel="manifest" href="icons/site.webmanifest">
+    
+    <!-- Haupt-Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <title>FNAF Website</title>
 </head>
 <body>
-
+    <!-- Hintergrundbild von Freddy -->
     <div class="freddy-bg">
         <img id="freddy-image" src="/icons/freddy-bg.png" alt="Freddy">
         <!-- Die Augen werden per JS eingefügt -->
     </div>
 
+    <!-- Header & Navigation -->
     <header>
         <h1>Willkommen auf der FNAF Website</h1>
         <nav>
@@ -25,13 +30,17 @@
         </nav>
     </header>
 
+    <!-- Hauptinhalt der Seite -->
     <main>
+        <!-- Startseite -->
         <section id="home" class="home">
             <div class="section-header">
                 <h2>Startseite</h2>
-                <button class="toggle-btn" data-target="home-text">Mehr</button>
+                <button class="toggle-btn" data-target="home-text">Mehr anzeigen</button>
             </div>
-            <p class="summary">Willkommen auf der offiziellen FNAF Website! Hier erhältst du einen schnellen Überblick über die wichtigsten Infos zu den Five Nights at Freddy's Spielen.</p>
+            <p class="summary">
+                Willkommen auf der offiziellen FNAF Website! Hier erhältst du einen schnellen Überblick über die wichtigsten Infos zu den Five Nights at Freddy's Spielen.
+            </p>
             <div class="full-text" id="home-text">
                 <p>
                     Die FNAF Website ist deine zentrale Anlaufstelle für alle Informationen rund um die berühmte Horror-Spielreihe Five Nights at Freddy's.
@@ -42,12 +51,15 @@
             </div>
         </section>
 
+        <!-- Über FNAF -->
         <section id="about" class="about">
             <div class="section-header">
                 <h2>Über FNAF</h2>
-                <button class="toggle-btn" data-target="about-text">Mehr</button>
+                <button class="toggle-btn" data-target="about-text">Mehr anzeigen</button>
             </div>
-            <p class="summary">Five Nights at Freddy's (FNAF) ist eine berühmte Horror-Spielreihe, die sich um unheimliche Animatronics dreht.</p>
+            <p class="summary">
+                Five Nights at Freddy's (FNAF) ist eine berühmte Horror-Spielreihe, die sich um unheimliche Animatronics dreht.
+            </p>
             <div class="full-text" id="about-text">
                 <p>
                     Five Nights at Freddy's (FNAF) wurde von Scott Cawthon entwickelt und 2014 erstmals veröffentlicht. Das Spielprinzip ist einfach und doch fesselnd:
@@ -59,12 +71,15 @@
             </div>
         </section>
 
+        <!-- Spiele -->
         <section id="games" class="games">
             <div class="section-header">
                 <h2>Spiele</h2>
-                <button class="toggle-btn" data-target="games-text">Mehr</button>
+                <button class="toggle-btn" data-target="games-text">Mehr anzeigen</button>
             </div>
-            <p class="summary">Die FNAF-Reihe umfasst mehrere Spiele, vom klassischen Original bis zu modernen Spin-Offs und VR-Erfahrungen.</p>
+            <p class="summary">
+                Die FNAF-Reihe umfasst mehrere Spiele, vom klassischen Original bis zu modernen Spin-Offs und VR-Erfahrungen.
+            </p>
             <div class="full-text" id="games-text">
                 <ul>
                     <li><strong>Five Nights at Freddy's (2014):</strong> Das erste Spiel, in dem du als Nachtwächter gegen die Animatronics kämpfst.</li>
@@ -83,12 +98,15 @@
             </div>
         </section>
 
+        <!-- Kontakt -->
         <section id="contact" class="contact">
             <div class="section-header">
                 <h2>Kontakt</h2>
-                <button class="toggle-btn" data-target="contact-text">Mehr</button>
+                <button class="toggle-btn" data-target="contact-text">Mehr anzeigen</button>
             </div>
-            <p class="summary">Du hast Fragen oder möchtest Feedback geben? Kontaktiere mich einfach per E-Mail oder über GitHub!</p>
+            <p class="summary">
+                Du hast Fragen oder möchtest Feedback geben? Kontaktiere mich einfach per E-Mail oder über GitHub!
+            </p>
             <div class="full-text" id="contact-text">
                 <p>
                     Bei Fragen, Ideen, Feedback oder Anregungen zur Website kannst du mich jederzeit erreichen.
@@ -100,9 +118,12 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 All rights reserved. Designed and Created by Johann Wohlgemuth</p>
     </footer>
+
+    <!-- Haupt-JS (Augen, Klapptexte) -->
     <script src="script.js"></script>
 </body>
 </html>
